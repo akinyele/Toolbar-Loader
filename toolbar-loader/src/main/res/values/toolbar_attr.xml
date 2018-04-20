@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ToolbarLoader">
+        <attr name="tb_color" format="color"/>
+        <!--<attr name="tb_mode" format="flag" />-->
+
+        <attr name="tb_loader" format="enum">
+            <enum name="progressbar" value="0"/>
+            <enum name="gradient" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>
