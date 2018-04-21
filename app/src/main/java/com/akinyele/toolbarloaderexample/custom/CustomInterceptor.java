@@ -15,7 +15,7 @@ import okhttp3.ResponseBody;
  */
 public class CustomInterceptor implements Interceptor {
 
-    private static final String TAG = "CustomInterceptor";
+    private static final String TAG = "ToolBarInterceptor";
 
     @Override
     public Response intercept(Chain chain) throws IOException {

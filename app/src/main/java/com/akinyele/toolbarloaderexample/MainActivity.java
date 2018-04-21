@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.akinyele.toolbar_loader.ToolbarLoader;
+import com.akinyele.toolbar_loader.networking.ToolBarInterceptor;
 
 import java.io.IOException;
 
@@ -37,12 +38,14 @@ public class MainActivity extends AppCompatActivity {
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
+
         client = new OkHttpClient.Builder()
-                //.addInterceptor(loggingInterceptor)
-                //.addInterceptor(new CustomInterceptor())
+                .addInterceptor(loggingInterceptor)
+                .addInterceptor(ToolBarInterceptor.getInterceptor())
                 .build();
 
-        mToolbarLoader.setOkHttpClient(client);
+        ToolBarInterceptor.registerToolbar(mToolbarLoader);
+
     }
 
 
